@@ -13,7 +13,8 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     clean = require('gulp-clean'),
     colors = require('ansi-colors'),
-    browserSync = require('browser-sync');
+    browserSync = require('browser-sync'),
+    copy = require('cpy');
 //
 ////////////////////////////////////////////////////////////////////
 /* -------------------------------------------------------------- */
@@ -57,6 +58,23 @@ var onError = function (err) {
     console.log("\n\n" + err.name + '\n\n' + err.message);
 
 };
+//
+////////////////////////////////////////////////////////////////////
+/* -------------------------------------------------------------- */
+////////////////////////////////////////////////////////////////////
+//
+//  Copy
+//
+gulp.task('copy:jquery', (cb) => {
+    let src = ['./node_modules/jquery/dist/jquery.min.js'];
+    let dest = './theme/public/assets/javascript/';
+    copy(src, dest, {}).then((res) => {
+        if (res.length > 0) {
+            console.log("jquery.min.js wird kopiert");
+        }
+        cb();
+    });
+});
 //
 ////////////////////////////////////////////////////////////////////
 /* -------------------------------------------------------------- */
@@ -124,5 +142,5 @@ gulp.task('watch', function (done) {
 //
 // TASKS
 //
-gulp.task('default', gulp.series('dev_init',  'styles', 'watch'));
+gulp.task('default', gulp.series('dev_init', 'copy:jquery', 'styles', 'watch'));
 gulp.task('prod',    gulp.series('prod_init', 'styles', 'clean'));
