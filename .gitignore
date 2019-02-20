@@ -2,5 +2,5 @@
 /node_modules
 /theme/public/assets/css
 
-.idea
+.idea/
 .DS_Store
