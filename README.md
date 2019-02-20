@@ -1,6 +1,4 @@
-# Mini-Gulp-Foundation-Frontend-Workflow
-
-## minibam
+# Mini-Gulp-Foundation-Frontend-Workflow (minibam)
 
 **npm install**
 
@@ -16,13 +14,13 @@
 
 - eigentlich wie *gulp*, nur, dass nach der Arbeit nochmal durchgewischt wird..
  
+ --- 
  
 *Was fehlt (vielleicht)*
  
  - JavaScript Workflow
- - unset CSS?
  - Bilder Workflow
- 
+ - unset CSS
  
  ---
  
