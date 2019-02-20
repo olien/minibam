@@ -2,21 +2,21 @@
 
 **npm install**
 
-- "Fooundation for Sites" und eine Menge mehr Kram wird geladen
+- "Foundation for Sites" und eine Menge mehr Kram wird geladen (node_modules)
     
 
 **gulp** 
 
-- Browsersync wird gestartet
 - SCSS wird kompiliert, CSS erzeugt, komprimiert usw...
+- Browsersync wird gestartet
     
 **gulp prod**
 
-- eigentlich wie *gulp*, nur, dass nach der Arbeit nochmal durchgewischt wird..
+- eigentlich wie *gulp*, nur, dass nach der Arbeit nochmal durchgewischt und neu sortiert wird..
  
  --- 
  
-*Was fehlt (vielleicht)*
+**Was fehlt (vielleicht)**
  
  - JavaScript Workflow
  - Bilder Workflow
@@ -24,6 +24,6 @@
  
  ---
  
- *Zusätzliches*
+ **Zusätzliches**
  
  - http://marcj.github.io/css-element-queries/
