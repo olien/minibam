@@ -49,7 +49,7 @@ gulp.task('prod_init', function (cb) {
 //
 var onError = function (err) {
     notify.onError({
-        title: 'BOH Alter...!',
+        title: 'Ey',
         message: 'Du hast Mist gebaut!',
         sound: 'Basso',
         icon: 'coffee.jpg'
