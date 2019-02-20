@@ -7,7 +7,7 @@
 
 **gulp** 
 
-- SCSS wird kompiliert, CSS erzeugt, komprimiert usw...
+- SCSS wird kompiliert, CSS erzeugt, JS komprimiert usw...
 - Browsersync wird gestartet
     
 **gulp prod**
@@ -18,7 +18,6 @@
  
 **Was fehlt (vielleicht)**
  
- - JavaScript Workflow
  - Bilder Workflow
  - unset CSS
  

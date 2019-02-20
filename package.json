@@ -2,14 +2,14 @@
   "private": true,
   "name": "minibam",
   "description": "Mini-Gulp-Foundation-Frontend-Workflow",
-  "version": "0.1",
+  "version": "0.0.1",
   "author": "",
   "license": "",
   "dependencies": {
     "foundation-sites": "^6.5.3",
+    "jquery": "^3.1.1",
     "motion-ui": "^2.0.3",
-    "what-input": "^5.1.2",
-    "jquery": "^3.1.1"
+    "what-input": "^5.1.2"
   },
   "devDependencies": {
     "ansi-colors": "^3.2.3",
@@ -26,6 +26,8 @@
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.4"
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.1"
   }
 }

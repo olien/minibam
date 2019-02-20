@@ -1,6 +1,7 @@
 
 /node_modules
 /theme/public/assets/css
+/theme/public/assets/js
 
 .idea/
 .DS_Store
