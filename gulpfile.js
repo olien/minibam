@@ -52,7 +52,7 @@ var onError = function (err) {
         title: 'ROARRRRRRRRRR!',
         message: 'Du hast Mist gebaut!',
         sound: 'Basso',
-        icon: 'trex.png'
+        icon: 'coffee.jpg'
     })(err);
     console.log("\n\n" + err.name + '\n\n' + err.message);
 
