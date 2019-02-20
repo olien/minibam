@@ -1,6 +1,6 @@
-# minibam
+# Mini-Gulp-Foundation-Frontend-Workflow
 
-Mini-Gulp-Foundation-Frontend-Workflow
+## minibam
 
 **npm install**
 
