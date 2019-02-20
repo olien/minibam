@@ -1,4 +1,4 @@
-* /node_modules
-* /theme/public/assets/css
+ /node_modules
+ /theme/public/assets/css
  .DS_Store
  .idea
