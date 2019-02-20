@@ -23,15 +23,11 @@
  
  ---
  
- **Zusätzliches**
- 
- - http://marcj.github.io/css-element-queries/
- 
- ---
  
 **ToDo**
 
-- benötigte SCSS,JS Dateien kopieren und im prod komprimieren
+ 
+ - http://marcj.github.io/css-element-queries/
 - auf Theme Ordner hinweisen 
 - REDAXO Template erstellen?
 - REDAXO Module erstellen?

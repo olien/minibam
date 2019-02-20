@@ -67,31 +67,10 @@ var onError = function (err) {
 //
 //  Copy
 //
-gulp.task('copy:jquery', (cb) => {
-    let src = ['./node_modules/jquery/dist/jquery.min.js'];
-    let dest = './theme/public/assets/js/';
-    copy(src, dest, {}).then((res) => {
-        if (res.length > 0) {
-            console.log("jquery.min.js wird kopiert");
-        }
-        cb();
-    });
-    let src1 = ['./node_modules/css-element-queries/src/ResizeSensor.js'];
-    let dest1 = './theme/private/js/';
-    copy(src1, dest1, {}).then((res) => {
-        if (res.length > 0) {
-            console.log("ResizeSensor wird kopiert");
-        }
-        cb();
-    });
-    let src2 = ['./node_modules/css-element-queries/src/ElementQueries.js'];
-    let dest2 = './theme/private/js/';
-    copy(src2, dest2, {}).then((res) => {
-        if (res.length > 0) {
-            console.log("ElementQueries wird kopiert");
-        }
-        cb();
-    });
+gulp.task('copy:js', function () {
+    return gulp
+        .src(['./node_modules/jquery/dist/jquery.min.js'])
+       .pipe(gulp.dest('./theme/public/assets/js/'));
 });
 //
 ////////////////////////////////////////////////////////////////////
@@ -115,7 +94,7 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('./theme/public/assets/css/'))
         .pipe(cssmin())
         .pipe(sourcemaps.init())
-        .pipe(sourcemaps.write('./maps', {addComment: false}))
+//        .pipe(sourcemaps.write('./maps', {addComment: false}))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('./theme/public/assets/css/'))
 });
@@ -126,7 +105,7 @@ gulp.task('styles', function () {
 // Javascript
 //
 gulp.task('javascript', function() {
-    return gulp.src(['./theme/private/js/app.js', './theme/private/js/*.js'])
+    return gulp.src(['./theme/private/js/app.js', './theme/private/js/*.js', './theme/private/js/vendor/*.js'])
         .pipe(plumber({errorHandler: onError}))
         .pipe(concat('app.js'))
         .pipe(uglify())
@@ -175,5 +154,5 @@ gulp.task('watch', function (done) {
 //
 // TASKS
 //
-gulp.task('default', gulp.series('dev_init', 'copy:jquery', 'javascript', 'styles', 'watch'));
+gulp.task('default', gulp.series('dev_init', 'copy:js', 'javascript', 'styles', 'watch'));
 gulp.task('prod',    gulp.series('prod_init', 'styles', 'clean'));
