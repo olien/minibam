@@ -14,20 +14,26 @@
 
 - eigentlich wie *gulp*, nur, dass nach der Arbeit nochmal durchgewischt und neu sortiert wird..
  
- --- 
+--- 
+
+**Zusaätzlich**
+
+ - http://marcj.github.io/css-element-queries/
+
+
+---
  
 **Was fehlt (vielleicht)**
  
  - Bilder Workflow
  - unset CSS
  
- ---
+---
  
  
 **ToDo**
 
- 
- - http://marcj.github.io/css-element-queries/
+
 - auf Theme Ordner hinweisen 
 - REDAXO Template erstellen?
 - REDAXO Module erstellen?

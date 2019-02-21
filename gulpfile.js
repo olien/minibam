@@ -2,21 +2,21 @@
 //
 // VARS
 //
-var gulp = require('gulp'),
-    asciify = require('asciify'),
-    sass = require('gulp-sass'),
-    rename = require('gulp-rename'),
-    cssmin = require('gulp-cssnano'),
-    prefix = require('gulp-autoprefixer'),
-    plumber = require('gulp-plumber'),
-    notify = require('gulp-notify'),
-    sourcemaps = require('gulp-sourcemaps'),
-    clean = require('gulp-clean'),
-    colors = require('ansi-colors'),
+var gulp        = require('gulp'),
+    asciify     = require('asciify'),
     browserSync = require('browser-sync'),
-    copy = require('cpy'),
-    uglify = require('gulp-uglify'),
-    concat = require('gulp-concat');
+    clean       = require('gulp-clean'),
+    colors      = require('ansi-colors'),
+    concat      = require('gulp-concat'),
+    copy        = require('cpy'),
+    cssmin      = require('gulp-cssnano'),
+    sass        = require('gulp-sass'),
+    notify      = require('gulp-notify'),
+    plumber     = require('gulp-plumber'),
+    prefix      = require('gulp-autoprefixer'),
+    rename      = require('gulp-rename'),
+    uglify      = require('gulp-uglify');
+
 //
 ////////////////////////////////////////////////////////////////////
 /* -------------------------------------------------------------- */
@@ -65,12 +65,17 @@ var onError = function (err) {
 /* -------------------------------------------------------------- */
 ////////////////////////////////////////////////////////////////////
 //
-//  Copy
+//  COPY
 //
-gulp.task('copy:js', function () {
+gulp.task('copy:jquery', function () {
     return gulp
-        .src(['./node_modules/jquery/dist/jquery.min.js'])
+        .src('./node_modules/jquery/dist/jquery.min.js')
        .pipe(gulp.dest('./theme/public/assets/js/'));
+});
+gulp.task('copy:elementqueries', function () {
+    return gulp
+        .src(['./node_modules/css-element-queries/src/ResizeSensor.js','./node_modules/css-element-queries/src/ElementQueries.js'])
+        .pipe(gulp.dest('./theme/public/assets/js/'));
 });
 //
 ////////////////////////////////////////////////////////////////////
@@ -93,8 +98,6 @@ gulp.task('styles', function () {
         .pipe(prefix(prefixerOptions))
         .pipe(gulp.dest('./theme/public/assets/css/'))
         .pipe(cssmin())
-        .pipe(sourcemaps.init())
-//        .pipe(sourcemaps.write('./maps', {addComment: false}))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('./theme/public/assets/css/'))
 });
@@ -102,10 +105,10 @@ gulp.task('styles', function () {
 /* -------------------------------------------------------------- */
 ////////////////////////////////////////////////////////////////////
 //
-// Javascript
+// JAVASCRIPT
 //
 gulp.task('javascript', function() {
-    return gulp.src(['./theme/private/js/app.js', './theme/private/js/*.js', './theme/private/js/vendor/*.js'])
+    return gulp.src('./theme/private/js/*.js')
         .pipe(plumber({errorHandler: onError}))
         .pipe(concat('app.js'))
         .pipe(uglify())
@@ -154,5 +157,5 @@ gulp.task('watch', function (done) {
 //
 // TASKS
 //
-gulp.task('default', gulp.series('dev_init', 'copy:js', 'javascript', 'styles', 'watch'));
+gulp.task('default', gulp.series('dev_init', 'copy:jquery', 'copy:elementqueries' , 'javascript', 'styles', 'watch'));
 gulp.task('prod',    gulp.series('prod_init', 'styles', 'clean'));
