@@ -16,23 +16,21 @@
  
 --- 
 
-**Zusaätzlich**
+**Zusätzlich**
 
  - http://marcj.github.io/css-element-queries/
-
 
 ---
  
 **Was fehlt (vielleicht)**
  
+ - JS Foundation Workflow
  - Bilder Workflow
  - unset CSS
  
 ---
  
- 
 **ToDo**
-
 
 - auf Theme Ordner hinweisen 
 - REDAXO Template erstellen?
